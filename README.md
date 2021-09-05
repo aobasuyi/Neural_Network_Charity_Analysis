@@ -18,43 +18,40 @@ The technical analysis deliverables required to complete the Neural Network Char
 
 ## Results: 
 
-### b.) Data Preprocessing: 
+### a.) Data Preprocessing 
 - The variable considered target for the model is **"IS_SUCCESSFUL".**
 -  The variable(s) considered to be the features for the model are **"EIN", "NAME", "APPLICATION_TYPE", "AFFILIATION", "CLASSIFICATION", "USE_CASE", "ORGANIZATION", "STATUS", "INCOME_AMT" "SPECIAL_CONSIDERATIONS", "SPECIAL_CONSIDERATIONS".**
 - The variable(s) that are neither targets nor features, and should be removed from the input data include **"EIN"** and **"NAME".**
 
-##### b.) Compiling, Training, and Evaluating the Model:
+#### b.) Compiling, Training, and Evaluating the Model
 
 - The number of neurons, layers, and activation functions selected for the neural network model:
     - Layers: 2
-    - Neurons: 
-        - hidden_nodes_layer1 = 80
-        - hidden_nodes_layer2 = 30
-    - Activaion functions: ReLu and Sigmoid
-        - The ReLU function is ideal for looking at positive nonlinear input data for classification or regression while the Sigmoid function is ideal for binary classification (the outer layer.)
+    - Neurons: hidden nodes layer1 = 80; hidden nodes layer2 = 30
+    - Activation functions used: ReLu and Sigmoid
+        - The ReLU function is ideal for looking at positive nonlinear input data for classification or regression while the Sigmoid function is used in the outer layer because it is ideal for binary classification.
 
-- Was the target model performance of 75% achieved?
-    - The results show that model accuracy = **72.50%** was below the target model performance.
+- Target model performance achieved:
+    - The model accuracy of **72.50%** was below the target model performance of **75%**.
 
+Steps taken to try and increase model performance include:
+##### Optimization 1
+    - Removed extreme value for variable "ASK_AMT".
+    - Dropped columns **"AFFILIATION" and "ORGANIZATION".**
+    - Added additional hidden layers.
+    - Change activation function of hidden layers to **"LeakyReLU".**
+This model performed considerably worse than the previous model (accuracy = **52.53%** )and was not better than chance in predicting succes rates.
 
-- Steps taken to try and increase model performance include
-    - Optimization 1
-        - Removed extreme value for variable "ASK_AMT".
-        - Dropped columns **"AFFILIATION" and "ORGANIZATION".**
-        - Added additional hidden layers.
-        - Change activation function of hidden layers to **"LeakyReLU".**
-    - This model performed considerably worse than the previous model (accuracy = **52.53%** )and was not better than chance in predicting succes rates.
+<br /> ![Image](Resources/Optimization1.png) <br />
 
-<br /> ![Image](Images/SMOTEENN%20Combination%20Sampling.png) <br />
+##### Optimization 2 and 3
+    - Added additional neurons to hidden layers.
+    - Added additional hidden layers.
+    - Change activation function of hidden layers to **"LeakyReLU".**
+    - Increase the epochs to **"150"**.
+- This model performace was similar to model 1 (accuracy = **72.44%** )and was still below the target model performance.
 
-    - Optimization 2 and 3
-        - Added additional neurons to hidden layers.
-        - Added additional hidden layers.
-        - Change activation function of hidden layers to **"LeakyReLU".**
-        - Increase the epochs to **"150"**.
-    - This model performace was similar to model 1 (accuracy = **72.44%** )and was still below the target model performance.
-
-<br /> ![Image](Images/SMOTEENN%20Combination%20Sampling.png) <br />
+<br /> ![Image](Resources/Optimization2.png) <br />
 
 
 ## Summary:
